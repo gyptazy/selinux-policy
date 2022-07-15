@@ -384,12 +384,6 @@ optional_policy(`
 
 optional_policy(`
 	tunable_policy(`logrotate_read_inside_containers',`
-		container_manage_lib_files(logrotate_t)
-	')
-')
-
-optional_policy(`
-	tunable_policy(`logrotate_read_inside_containers',`
 		virt_read_sandbox_files(logrotate_t)
 	')
 ')

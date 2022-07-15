@@ -468,11 +468,6 @@ optional_policy(`
 ')
 
 optional_policy(`
-	container_read_share_files(systemd_machined_t)
-	container_spc_read_state(systemd_machined_t)
-')
-
-optional_policy(`
     mock_read_lib_files(systemd_machined_t)
 ')
 

@@ -365,10 +365,6 @@ optional_policy(`
 ')
 
 optional_policy(`
-    container_rw_sem(lvm_t)
-')
-
-optional_policy(`
 	gpm_dontaudit_getattr_gpmctl(lvm_t)
 ')
 
