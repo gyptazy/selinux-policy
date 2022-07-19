@@ -273,12 +273,6 @@ optional_policy(`
 ')
 
 optional_policy(`
-	container_stream_connect(abrt_t)
-    virt_stub_container_image()
-    allow abrt_t container_file_t:file map;
-')
-
-optional_policy(`
     gnome_map_generic_data_home_files(abrt_t)
 ')
 
