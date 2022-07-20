@@ -127,10 +127,6 @@ optional_policy(`
 ')
 
 optional_policy(`
-	container_stream_connect(sysadm_t)
-')
-
-optional_policy(`
     dirsrv_domtrans(sysadm_t)
     dirsrv_stream_connect(sysadm_t)
     dirsrv_manage_log(sysadm_t)

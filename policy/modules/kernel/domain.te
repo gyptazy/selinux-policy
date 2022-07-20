@@ -703,7 +703,3 @@ optional_policy(`
 		prelink_exec(domain)
 	')
 ')
-
-optional_policy(`
-    container_spc_stream_connect(domain)
-')

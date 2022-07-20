@@ -218,10 +218,6 @@ optional_policy(`
 ')
 
 optional_policy(`
-	container_runtime_entrypoint(unconfined_t)
-')
-
-optional_policy(`
 	oddjob_mkhomedir_entrypoint(unconfined_t)
 ')
 

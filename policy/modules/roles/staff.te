@@ -124,11 +124,6 @@ optional_policy(`
 ')
 
 optional_policy(`
-    container_stream_connect(staff_t)
-    container_runtime_exec(staff_t)
-')
-
-optional_policy(`
     dirsrv_stream_connect(staff_t)
     dirsrv_manage_log(staff_t)
     dirsrv_manage_var_lib(staff_t)

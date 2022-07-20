@@ -1,0 +1,11 @@
+--- a/Rules.monolithic
++++ b/Rules.monolithic
+@@ -46,7 +46,7 @@
+ #
+ # default action: build policy locally
+ #
+-default: policy
++default: load
+ 
+ policy: $(polver)
+ 
