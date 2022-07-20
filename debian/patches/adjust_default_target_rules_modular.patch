@@ -14,7 +14,7 @@
  	@echo "Loading configured modules."
  	@$(INSTALL) -d -m 0755 $(policypath) $(dir $(fcpath))
 -	$(verbose) $(SEMODULE) -s $(NAME) -b $(modpkgdir)/$(notdir $(base_pkg)) $(foreach mod,$(mod_pkgs),-i $(modpkgdir)/$(mod))
-+	$(verbose) $(SEMODULE) -S ~/packaging/selinux-policy/debian/pkg_files/var/lib/selinux/ -s $(NAME) -b $(modpkgdir)/$(notdir $(base_pkg)) $(foreach mod,$(mod_pkgs),-i $(modpkgdir)/$(mod))
++	$(verbose) $(SEMODULE) -S /home/vagrant/packaging/selinux-policy/debian/pkg_files/var/lib/selinux/ -s $(NAME) -b $(modpkgdir)/$(notdir $(base_pkg)) $(foreach mod,$(mod_pkgs),-i $(modpkgdir)/$(mod))
  
  ########################################
  #
