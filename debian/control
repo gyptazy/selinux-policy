@@ -1,0 +1,16 @@
+Source: selinux-policy-targeted-fedora
+Section: selinux
+Priority: optional
+Maintainer: Florian Paul Azim Hoberg <florian.hoberg@credativ.de>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/gardenlinux-selinux-module
+#Vcs-Git: https://salsa.debian.org/debian/gardenlinux-selinux-module.git
+Rules-Requires-Root: no
+
+Package: selinux-policy-targeted-fedora
+Architecture: all
+Depends: ${misc:Depends}, libselinux1, libsemanage2, policycoreutils, selinux-utils
+Description: Selinux module for GardenLinux
+  This package installs and enables Fedora's SELinux rules.

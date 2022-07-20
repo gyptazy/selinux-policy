@@ -1,0 +1,6 @@
+selinux-policy-targeted-fedora (37.6.2-1) gardenlinux; urgency=medium
+
+  [ Florian Paul Azim Hoberg ]
+  * Initial release
+
+ -- Florian Paul Azim Hoberg <florian.hoberg@credativ.de>  Tue, 12 Jul 2022 13:59:08 +0100
