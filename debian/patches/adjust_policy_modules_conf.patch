@@ -1,0 +1,11 @@
+--- a/policy/modules.conf
++++ b/policy/modules.conf
+@@ -2737,7 +2737,7 @@
+ # 
+ # rtas policy
+ #
+-rtas = module
++#rtas = module
+ 
+ # Layer: contrib
+ # Module: journalctl

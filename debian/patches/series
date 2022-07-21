@@ -1,3 +1,4 @@
+adjust_policy_modules_conf.patch
 adjust_default_target_rules_modular.patch
 adjust_default_target_rules_monolithic.patch
 adjust_build_conf.patch
