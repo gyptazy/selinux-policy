@@ -1,1 +1,3 @@
 debian/pkg_files/etc/selinux/targeted-fedora/policy/policy.33
+debian/pkg_files/etc/selinux/targeted-fedora/contexts/files/file_contexts.bin
+debian/pkg_files/etc/selinux/targeted-fedora/contexts/files/file_contexts.homedirs.bin
