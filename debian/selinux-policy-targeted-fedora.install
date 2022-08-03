@@ -1,2 +1,1 @@
 debian/pkg_files/etc/selinux/targeted-fedora/* etc/selinux/targeted-fedora/
-debian/pkg_files/var/lib/selinux/targeted-fedora/* var/lib/selinux/targeted-fedora/
