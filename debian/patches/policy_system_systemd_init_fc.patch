@@ -1,0 +1,11 @@
+--- a/policy/modules/system/init.fc
++++ b/policy/modules/system/init.fc
+@@ -32,7 +32,7 @@
+ #
+ # /sbin
+ #
+-/bin/systemd		--	gen_context(system_u:object_r:init_exec_t,s0)
++/usr/lib/systemd/systemd		--	gen_context(system_u:object_r:init_exec_t,s0)
+ 
+ #
+ # /sbin
