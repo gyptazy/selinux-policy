@@ -1,0 +1,7 @@
+policy_users.patch
+add_systemd_resolved_generic_node.patch
+adjust_default_target_rules_monolithic.patch
+adjust_default_target_rules_modular.patch
+remove_policy_rtas.patch
+adjust_build_conf.patch
+remove_container_interface.patch

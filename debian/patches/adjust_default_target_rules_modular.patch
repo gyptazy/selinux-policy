@@ -1,0 +1,20 @@
+--- a/Rules.modular
++++ b/Rules.modular
+@@ -36,7 +36,7 @@
+ #
+ # default action: create all module packages
+ #
+-default: policy
++default: load
+ 
+ all policy: base modules
+ 
+@@ -198,6 +198,8 @@
+ 	$(verbose) $(GREP) '^[[:blank:]]*type .*customizable' $< | cut -d';' -f1 | cut -d',' -f1 | cut -d' ' -f2 | $(SORT) -u > $(tmpdir)/customizable_types
+ 	@$(INSTALL) -d -m 0755 $(@D)
+ 	$(verbose) $(INSTALL) -m 0644 $(tmpdir)/customizable_types $@
++	rsync -avP /etc/selinux/$(NAME)/* distro_config/
++	rsync -avP /var/lib/selinux/$(NAME)/* distro_modules/
+ 
+ ########################################
+ #

@@ -1,0 +1,195 @@
+--- a/policy/modules/kernel/domain.te
++++ b/policy/modules/kernel/domain.te
+@@ -703,7 +703,3 @@
+ 		prelink_exec(domain)
+ 	')
+ ')
+-
+-optional_policy(`
+-    container_spc_stream_connect(domain)
+-')
+--- a/policy/modules/contrib/abrt.te
++++ b/policy/modules/contrib/abrt.te
+@@ -273,12 +273,6 @@
+ ')
+
+ optional_policy(`
+-	container_stream_connect(abrt_t)
+-    virt_stub_container_image()
+-    allow abrt_t container_file_t:file map;
+-')
+-
+-optional_policy(`
+     gnome_map_generic_data_home_files(abrt_t)
+ ')
+
+--- a/policy/modules/system/iptables.te
++++ b/policy/modules/system/iptables.te
+@@ -127,10 +127,6 @@
+ ')
+
+ optional_policy(`
+-	container_read_state(iptables_t)
+-')
+-
+-optional_policy(`
+ 	fail2ban_append_log(iptables_t)
+     fail2ban_read_log(iptables_t)
+ 	fail2ban_dontaudit_leaks(iptables_t)
+--- a/policy/modules/system/logging.te
++++ b/policy/modules/system/logging.te
+@@ -690,10 +690,6 @@
+ ')
+
+ optional_policy(`
+-    container_read_lib_files(syslogd_t)
+-')
+-
+-optional_policy(`
+ 	cron_manage_log_files(syslogd_t)
+ 	cron_generic_log_filetrans_log(syslogd_t, file, "cron.log")
+ 	cron_generic_log_filetrans_log(syslogd_t, file, "cron")
+--- a/policy/modules/contrib/logrotate.te
++++ b/policy/modules/contrib/logrotate.te
+@@ -384,12 +384,6 @@
+
+ optional_policy(`
+ 	tunable_policy(`logrotate_read_inside_containers',`
+-		container_manage_lib_files(logrotate_t)
+-	')
+-')
+-
+-optional_policy(`
+-	tunable_policy(`logrotate_read_inside_containers',`
+ 		virt_read_sandbox_files(logrotate_t)
+ 	')
+ ')
+--- a/policy/modules/system/lvm.te
++++ b/policy/modules/system/lvm.te
+@@ -365,10 +365,6 @@
+ ')
+
+ optional_policy(`
+-    container_rw_sem(lvm_t)
+-')
+-
+-optional_policy(`
+ 	gpm_dontaudit_getattr_gpmctl(lvm_t)
+ ')
+
+--- a/policy/modules/contrib/pcp.te
++++ b/policy/modules/contrib/pcp.te
+@@ -164,10 +164,6 @@
+ ')
+
+ optional_policy(`
+-    container_manage_lib_files(pcp_pmcd_t)
+-')
+-
+-optional_policy(`
+     mock_read_lib_files(pcp_pmcd_t)
+ ')
+
+--- a/policy/modules/contrib/rhsmcertd.te
++++ b/policy/modules/contrib/rhsmcertd.te
+@@ -182,7 +182,3 @@
+     sssd_read_public_files(rhsmcertd_t)
+     sssd_stream_connect(rhsmcertd_t)
+ ')
+-
+-optional_policy(`
+-    container_manage_config_files(rhsmcertd_t)
+-')
+--- a/policy/modules/roles/staff.te
++++ b/policy/modules/roles/staff.te
+@@ -124,11 +124,6 @@
+ ')
+
+ optional_policy(`
+-    container_stream_connect(staff_t)
+-    container_runtime_exec(staff_t)
+-')
+-
+-optional_policy(`
+     dirsrv_stream_connect(staff_t)
+     dirsrv_manage_log(staff_t)
+     dirsrv_manage_var_lib(staff_t)
+--- a/policy/modules/roles/sysadm.te
++++ b/policy/modules/roles/sysadm.te
+@@ -127,10 +127,6 @@
+ ')
+
+ optional_policy(`
+-	container_stream_connect(sysadm_t)
+-')
+-
+-optional_policy(`
+     dirsrv_domtrans(sysadm_t)
+     dirsrv_stream_connect(sysadm_t)
+     dirsrv_manage_log(sysadm_t)
+--- a/policy/modules/system/systemd.te
++++ b/policy/modules/system/systemd.te
+@@ -468,11 +468,6 @@
+ ')
+
+ optional_policy(`
+-	container_read_share_files(systemd_machined_t)
+-	container_spc_read_state(systemd_machined_t)
+-')
+-
+-optional_policy(`
+     mock_read_lib_files(systemd_machined_t)
+ ')
+
+--- a/policy/modules/system/unconfined.te
++++ b/policy/modules/system/unconfined.te
+@@ -35,7 +35,3 @@
+ optional_policy(`
+ 	virt_transition_svirt(unconfined_service_t, system_r)
+ ')
+-
+-optional_policy(`
+-	container_runtime_domtrans(unconfined_service_t)
+-')
+--- a/policy/modules/contrib/virt.te
++++ b/policy/modules/contrib/virt.te
+@@ -1413,10 +1413,6 @@
+ ')
+
+ optional_policy(`
+-    container_exec_lib(virtd_lxc_t)
+-')
+-
+-optional_policy(`
+ 	gnome_read_generic_cache_files(virtd_lxc_t)
+ ')
+
+@@ -1596,16 +1592,6 @@
+     fs_exec_fusefs_files(svirt_sandbox_domain)
+ ')
+
+-optional_policy(`
+-    container_read_share_files(svirt_sandbox_domain)
+-    container_exec_share_files(svirt_sandbox_domain)
+-    container_lib_filetrans(svirt_sandbox_domain,container_file_t, sock_file)
+-    container_use_ptys(svirt_sandbox_domain)
+-    container_spc_stream_connect(svirt_sandbox_domain)
+-    fs_dontaudit_remount_tmpfs(svirt_sandbox_domain)
+-    dev_dontaudit_mounton_sysfs(svirt_sandbox_domain)
+-')
+-
+ ########################################
+ #
+ # container_t local policy
+--- a/policy/modules/roles/unconfineduser.te
++++ b/policy/modules/roles/unconfineduser.te
+@@ -218,10 +218,6 @@
+ ')
+
+ optional_policy(`
+-	container_runtime_entrypoint(unconfined_t)
+-')
+-
+-optional_policy(`
+ 	oddjob_mkhomedir_entrypoint(unconfined_t)
+ ')

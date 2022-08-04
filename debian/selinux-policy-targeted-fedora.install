@@ -1,0 +1,8 @@
+distro_config/* etc/selinux/targeted-fedora/
+distro_modules/* var/lib/selinux/targeted-fedora/
+debian/additional/file_contexts.local etc/selinux/targeted-fedora/contexts/files/
+debian/additional/file_contexts.subs etc/selinux/targeted-fedora/contexts/files/
+debian/additional/file_contexts.subs_dist etc/selinux/targeted-fedora/contexts/files/
+debian/additional/setrans.conf etc/selinux/targeted-fedora/
+debian/additional/booleans.subs_dist etc/selinux/targeted-fedora/
+debian/additional/sysadm_u etc/selinux/targeted-fedora/contexts/users/
